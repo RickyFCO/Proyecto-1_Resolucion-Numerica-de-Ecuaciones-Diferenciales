@@ -66,7 +66,7 @@ def solucion_crecimiento_logistico(t, P0=10, r=0.5, K=100):
 def solucion_movimiento_armonico_simple(t, A=1, omega=2):
     return A * np.cos(omega * t)
 
-# === Pruebas y Gráficas ===
+
 def graficar_resultados(x, y, x_exacta, y_exacta, titulo, xlabel='x', ylabel='y'):
     plt.plot(x_exacta, y_exacta, label='Solución Analítica', color='green')
     plt.plot(x, y, 'o-', label='Solución Numérica', color='blue')
@@ -86,11 +86,11 @@ n = 20
 x_euler, y_euler = metodo_euler(edo_lineal, x0, y0, h, n)
 x_rk4, y_rk4 = metodo_rk4(edo_lineal, x0, y0, h, n)
 
-# Solución analítica para comparación
+
 x_exacta = np.linspace(0, h * n, 100)
 y_exacta = solucion_analitica_lineal(x_exacta)
 
 graficar_resultados(x_euler, y_euler, x_exacta, y_exacta, 'Método de Euler vs Solución Analítica')
 graficar_resultados(x_rk4, y_rk4, x_exacta, y_exacta, 'Método de RK4 vs Solución Analítica')
 
-# Puedes incluir más pruebas con otras ecuaciones diferenciales y métodos aquí.
+
